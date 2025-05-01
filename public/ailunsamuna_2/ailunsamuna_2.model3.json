@@ -1,0 +1,96 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "/test/ailunsamuna_2/ailunsamuna_2.moc3",
+    "Textures": [
+      "/test/ailunsamuna_2/textures/texture_00.png"
+    ],
+    "Physics": "/test/ailunsamuna_2/ailunsamuna_2.physics3.json",
+    "Motions": {
+      "complete": [
+        {
+          "File": "/test/ailunsamuna_2/motions/complete.motion3.json"
+        }
+      ],
+      "effect": [
+        {
+          "File": "/test/ailunsamuna_2/motions/effect.motion3.json"
+        }
+      ],
+      "home": [
+        {
+          "File": "/test/ailunsamuna_2/motions/home.motion3.json"
+        }
+      ],
+      "idle": [
+        {
+          "File": "/test/ailunsamuna_2/motions/idle.motion3.json"
+        }
+      ],
+      "login": [
+        {
+          "File": "/test/ailunsamuna_2/motions/login.motion3.json"
+        }
+      ],
+      "mail": [
+        {
+          "File": "/test/ailunsamuna_2/motions/mail.motion3.json"
+        }
+      ],
+      "main_1": [
+        {
+          "File": "/test/ailunsamuna_2/motions/main_1.motion3.json"
+        }
+      ],
+      "main_2": [
+        {
+          "File": "/test/ailunsamuna_2/motions/main_2.motion3.json"
+        }
+      ],
+      "main_3": [
+        {
+          "File": "/test/ailunsamuna_2/motions/main_3.motion3.json"
+        }
+      ],
+      "mission": [
+        {
+          "File": "/test/ailunsamuna_2/motions/mission.motion3.json"
+        }
+      ],
+      "mission_complete": [
+        {
+          "File": "/test/ailunsamuna_2/motions/mission_complete.motion3.json"
+        }
+      ],
+      "touch_body": [
+        {
+          "File": "/test/ailunsamuna_2/motions/touch_body.motion3.json"
+        }
+      ],
+      "touch_head": [
+        {
+          "File": "/test/ailunsamuna_2/motions/touch_head.motion3.json"
+        }
+      ],
+      "touch_special": [
+        {
+          "File": "/test/ailunsamuna_2/motions/touch_special.motion3.json"
+        }
+      ],
+      "wedding": [
+        {
+          "File": "/test/ailunsamuna_2/motions/wedding.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": [
+        "ParamMouthOpenY"
+      ]
+    }
+  ]
+}
