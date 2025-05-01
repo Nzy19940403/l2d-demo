@@ -66,7 +66,7 @@ let renderCanvas = async () => {
 
     });
 
-    model = await Live2DModel.from("/public/ailunsamuna_2/ailunsamuna_2.model3.json");
+    model = await Live2DModel.from("/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json");
 
     app.stage.addChild(model);
 
