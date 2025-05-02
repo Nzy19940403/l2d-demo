@@ -27,14 +27,14 @@ import { config } from 'pixi-live2d-display';
 config.idleMotionFadingDuration = 300;
 Live2DModel.registerTicker(Ticker);
 
-let modelName = import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json"
+let modelName = import.meta.env.VITE_APP_MODEL_PREFIX+"buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json"
 let modelHasExpression = false;
  
 
 let map = {
-    "ailunsamuna_2":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json",
-    "aisaikesi_4":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/aisaikesi_4/aisaikesi_4.model3.json",
-    "xiaoba_vts":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/xiaoba_vts/xiaoba.model3.json",
+    "ailunsamuna_2":import.meta.env.VITE_APP_MODEL_PREFIX+"buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json",
+    "aisaikesi_4":import.meta.env.VITE_APP_MODEL_PREFIX+"buildPublic/aisaikesi_4/aisaikesi_4.model3.json",
+    "xiaoba_vts":import.meta.env.VITE_APP_MODEL_PREFIX+"buildPublic/xiaoba_vts/xiaoba.model3.json",
 }
 
 onMounted(() => {
