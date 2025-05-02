@@ -1,0 +1,42 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "xiaoba.moc3",
+		"Textures": [
+			"xiaoba.2048/texture_00.png",
+			"xiaoba.2048/texture_01.png",
+			"xiaoba.2048/texture_02.png",
+			"xiaoba.2048/texture_03.png",
+			"xiaoba.2048/texture_04.png",
+			"xiaoba.2048/texture_05.png"
+		],
+		"Physics": "xiaoba.physics3.json",
+		"DisplayInfo": "xiaoba.cdi3.json",
+		"Motions":{
+			"Scene1": [
+				{
+					"File": "motions/Scene1.motion3.json"
+				}
+			]
+		},
+		"expressions": [
+			{ "name": "faxing", "file": "expressions/faxing.exp3.json" },
+			{ "name": "han", "file": "expressions/han.exp3.json" }
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

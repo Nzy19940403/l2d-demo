@@ -1,5 +1,6 @@
 <script setup>
  import L2D from './components/L2D.vue';
+ console.log('Asset URL:', import.meta.env.VITE_APP_ASSETURL);
 </script>
 
 <template>

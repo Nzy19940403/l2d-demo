@@ -1,13 +1,16 @@
 <template>
     <div>
-        <!-- <button @click="login">
+        <button @click="login">
             login
-        </button> -->
+        </button>
         <button @click="loadModel('ailunsamuna_2')">
             ailunsamuna_2
         </button>
         <button @click="loadModel('aisaikesi_4')">
             aisaikesi_4
+        </button>
+        <button @click="loadModel('xiaoba_vts',true)">
+            xiaoba_vts
         </button>
     </div>
     
@@ -16,7 +19,7 @@
 
 <script setup>
 import { Application ,Ticker} from 'pixi.js';
-import { Live2DModel } from 'pixi-live2d-display/cubism4';
+import { Live2DModel,ExpressionManager  } from 'pixi-live2d-display/cubism4';
  
 import { onMounted } from 'vue';
 import { config } from 'pixi-live2d-display';
@@ -24,12 +27,14 @@ import { config } from 'pixi-live2d-display';
 config.idleMotionFadingDuration = 300;
 Live2DModel.registerTicker(Ticker);
 
-let modelName = "/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json"
-
+let modelName = import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json"
+let modelHasExpression = false;
+ 
 
 let map = {
-    "ailunsamuna_2":"/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json",
-    "aisaikesi_4":"/public/buildPublic/aisaikesi_4/aisaikesi_4.model3.json"
+    "ailunsamuna_2":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json",
+    "aisaikesi_4":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/aisaikesi_4/aisaikesi_4.model3.json",
+    "xiaoba_vts":import.meta.env.VITE_APP_MODEL_PREFIX+"/buildPublic/xiaoba_vts/xiaoba.model3.json",
 }
 
 onMounted(() => {
@@ -39,17 +44,30 @@ onMounted(() => {
 let model = null;
 
 let login = () => {
-    console.log(JSON.parse(JSON.stringify(model.internalModel.motionManager)))
+    // console.log(JSON.parse(JSON.stringify(model.internalModel.motionManager)))
     model.motion('login')
-    setTimeout(() => {
-        console.log(model.internalModel.motionManager)
-    }, 100);
+    // setTimeout(() => {
+    //     console.log(model.internalModel.motionManager)
+    // }, 100);
 }
 
-let loadModel = (name) =>{
+let loadModel = (name,hasExpression=false) =>{
+    modelHasExpression = hasExpression;
     modelName = map[name]
    
-    renderCanvas()
+    renderCanvas();
+
+    if(hasExpression){
+        // const expressionManager = model.internalModel.expressionManager;
+        // setTimeout(() => {
+        //     // console.log(model)
+        //     if (!model.internalModel.expressionManager) {
+        //         model.internalModel.expressionManager = new ExpressionManager(model.internalModel.coreModel);
+        //     }
+        //     model.internalModel.expressionManager.setExpression(0);
+        // }, 100);
+      
+    }
 }
 
 
@@ -86,14 +104,14 @@ let adjustModelScale = (model, containerWidth, containerHeight) => {
 let renderCanvas = async () => {
     const app = new Application({
         view: document.getElementById('canvas'),
-        width: 300,
-        height: 300
+        width: 600,
+        height: 600
 
 
     });
 
     model = await Live2DModel.from(modelName);
-
+     
     app.stage.addChild(model);
 
 
