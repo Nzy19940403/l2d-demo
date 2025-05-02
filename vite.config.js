@@ -16,6 +16,7 @@ export default defineConfig({
     },
  
   },
+  // assetsInclude: ['**/public/buildPublic/live2dcubismcore.min.js'],
   server:{
     proxy:{
       '^/test':{

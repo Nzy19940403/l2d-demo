@@ -1,5 +1,16 @@
 <template>
-    <button @click="login">login</button>
+    <div>
+        <!-- <button @click="login">
+            login
+        </button> -->
+        <button @click="loadModel('ailunsamuna_2')">
+            ailunsamuna_2
+        </button>
+        <button @click="loadModel('aisaikesi_4')">
+            aisaikesi_4
+        </button>
+    </div>
+    
     <canvas id="canvas"></canvas>
 </template>
 
@@ -12,7 +23,15 @@ import { config } from 'pixi-live2d-display';
 
 config.idleMotionFadingDuration = 300;
 Live2DModel.registerTicker(Ticker);
- 
+
+let modelName = "/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json"
+
+
+let map = {
+    "ailunsamuna_2":"/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json",
+    "aisaikesi_4":"/public/buildPublic/aisaikesi_4/aisaikesi_4.model3.json"
+}
+
 onMounted(() => {
     renderCanvas();
      
@@ -27,6 +46,13 @@ let login = () => {
     }, 100);
 }
 
+let loadModel = (name) =>{
+    modelName = map[name]
+   
+    renderCanvas()
+}
+
+
 let checkAnimation = ()=>{
     if(model){
         console.log(model.internalModel.motionManager.playing)
@@ -34,7 +60,7 @@ let checkAnimation = ()=>{
     
     requestAnimationFrame(checkAnimation)
 }
-requestAnimationFrame(checkAnimation)
+// requestAnimationFrame(checkAnimation)
 
 let adjustModelScale = (model, containerWidth, containerHeight) => {
     // 1. 获取模型原始尺寸
@@ -60,13 +86,13 @@ let adjustModelScale = (model, containerWidth, containerHeight) => {
 let renderCanvas = async () => {
     const app = new Application({
         view: document.getElementById('canvas'),
-        width: 1200,
-        height: 900
+        width: 300,
+        height: 300
 
 
     });
 
-    model = await Live2DModel.from("/public/buildPublic/ailunsamuna_2/ailunsamuna_2.model3.json");
+    model = await Live2DModel.from(modelName);
 
     app.stage.addChild(model);
 
